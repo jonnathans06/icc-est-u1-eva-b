@@ -1,3 +1,7 @@
+import Views.ViewConsole;
+import Models.Book;
+import Controllers.BookController;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -34,5 +38,26 @@ public class App {
                 new Book("The Elements of Statistical Learning", 2001)
         };
 
+
+    BookController bC = new BookController();    
+    ViewConsole vC = new ViewConsole();
+    
+    System.out.println("\t" + "=== Lista de libros ===");
+    vC.imprimirLibros(books);
+    System.out.println("-". repeat(63));
+
+    System.out.println("\t" + "=== Lista de libros Ordenados Descendete ===");
+    bC.sortByNameWithInsercion(books);
+    vC.imprimirLibros(books);
+    System.out.println("-".repeat(63));
+    
+    System.out.println("=== Libro Buscado ===");
+    Book indexBook = bC.buscarPorNombre(books,"Python the best book");
+
+    if (indexBook == null) {
+        System.out.println("No hay un libro con ese nombre");
+    } else {
+        System.out.println("Libro encontrado" + indexBook);
+    }
     }
 }
