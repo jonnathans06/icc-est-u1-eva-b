@@ -32,7 +32,7 @@ public class BookController {
                 return books[central];
             }
     
-            if (comparacion < 0) {
+            if (comparacion > 0) {
                 bajo = central + 1;
             } else {
                 alto = central - 1;

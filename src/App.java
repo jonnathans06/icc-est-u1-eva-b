@@ -53,11 +53,18 @@ public class App {
     
     System.out.println("=== Libro Buscado ===");
     Book indexBook = bC.buscarPorNombre(books,"Python the best book");
+    Book indexBook2 = bC.buscarPorNombre(books,"Deep Learning");
 
     if (indexBook == null) {
         System.out.println("No hay un libro con ese nombre");
     } else {
-        System.out.println("Libro encontrado" + indexBook);
+        System.out.println("Libro encontrado: " + indexBook);
+    }
+
+    if (indexBook2 == null) {
+        System.out.println("No hay un libro con ese nombre");
+    } else {
+        System.out.println("Libro encontrado: " + indexBook2);
     }
     }
 }
